@@ -1,5 +1,7 @@
 package com.srjons.test.controller;
 
+import com.srjons.test.service.SampleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +16,9 @@ import java.nio.file.Paths;
 
 @RestController
 public class UploadController {
+
+    @Autowired
+    SampleService sampleService;
 
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "D://temp//";
